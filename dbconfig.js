@@ -1,11 +1,20 @@
 const { Pool } = require('pg')
 
-const connectionString = 'postgresql://postgres:f1ynjwcZwvCVSbPqlFAH@containers-us-west-32.railway.app:7290/railway'
+const connectionLocal = {
+  user: 'postgres',
+  host: 'localhost',
+  database: 'railways',
+  password: 'postgres',
+  port: 5432,
+}
 
-const pool = new Pool({
-  connectionString
- })
- 
- 
- 
- module.exports = pool
+const connectionString = 'postgresql://postgres:Hf6fdE6UzFYbkL44NBb9@containers-us-west-118.railway.app:6551/railway'
+
+const connectionProduction = {
+  connectionString: connectionString
+}
+
+const pool = new Pool(connectionProduction)
+// const pool = new Pool(process.env.NODE_ENV === 'production' ? connectionProduction : connectionLocal) // This makes it so fellows don't have to change the Pool every time they push to GitHub.
+
+module.exports = pool
