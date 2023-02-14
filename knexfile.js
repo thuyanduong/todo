@@ -8,7 +8,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'todo4',
+      database: 'railway',
       user:     'postgres',
       password: ''
     }
@@ -17,7 +17,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      database: 'todo4',
+      database: 'railway',
       user:     'postgres',
       password: ''
     },
