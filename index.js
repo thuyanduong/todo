@@ -26,9 +26,15 @@ app.get('/todos', async (req,res) => {
 })
 
 app.post('/todos', async (req,res) => {
-    const {task} = req.body
-    const allTodos = await pool.query("INSERT INTO todo(task) VALUES($1) RETURNING *", [task])
-
+    
+    try{
+        const {task} = req.body
+        const allTodos = await pool.query("INSERT INTO todo(task) VALUES($1) RETURNING *", [task])
+        res.send("it works")
+    }
+    catch (err) {
+        console.error(err.message)
+    }
 })
 
 app.listen(PORT, () => {
