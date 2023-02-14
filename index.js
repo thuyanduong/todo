@@ -17,9 +17,7 @@ app.get('/todos', async (req,res) => {
     try{
         const allTodos = await pool.query("SELECT * from todo")
         res.send(allTodos.rows)
-
     }
-
     catch (err) {
         console.error(err.message)
     }
