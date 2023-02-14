@@ -3,7 +3,7 @@ const { Pool } = require('pg')
 const connectionLocal = {
   user: 'postgres',
   host: 'localhost',
-  database: 'railways',
+  database: 'railway',
   password: 'postgres',
   port: 5432,
 }
