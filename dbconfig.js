@@ -1,6 +1,6 @@
 const { Pool } = require('pg')
 
-const connectionString = 'postgresql://postgres:nSbZS3PdW1fAg89yiM9t@containers-us-west-164.railway.app:7837/railway'
+const connectionString = 'postgresql://postgres:3YPdLyslfVLPZObDQQND@containers-us-west-198.railway.app:6206/railway'
 
 const pool = new Pool({
   connectionString
