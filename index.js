@@ -8,7 +8,6 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
-/// Create todo
 app.get('/', (req,res) => {
     res.send("hello")
 })
@@ -44,6 +43,10 @@ app.post('/todos', async (req,res) => {
         console.error(err.message)
     }
 })
+
+console.log("Testing process variables!")
+console.log("PORT", process.env.PORT)
+console.log("NODE_ENV", process.env.NODE_ENV)
 
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT} `)
